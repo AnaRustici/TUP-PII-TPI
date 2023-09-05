@@ -4,9 +4,21 @@ libro2 = {'cod': 'QgfV4j3c', 'cant_ej_ad': 4, 'cant_ej_pr': 2, "titulo": "El pri
 libro3 = {'cod': 'adOd09UE', 'cant_ej_ad': 1, 'cant_ej_pr': 0, "titulo": "El código Da Vinci", "autor": "Dan Brown"}
 
 def nuevo_libro():
-    #completar
-    return None
+    CodGenerado = generar_codigo()
+    titulo = input("Ingrese el título: ") 
+    autor = input("Ingrese el autor: ")
+    ej_adquiridos = input("Ingrese los ejemplares adquiridos: ")
+
+    libro_reg = {
+        'cod': CodGenerado,
+        'titulo': titulo,
+        'autor': autor,
+        'cant_ej_ad': ej_adquiridos,
+        'cant_ej_pr': 0
+    }
+    return libro_reg
 
 def generar_codigo():
-    #completar
-    return None
+    from cod_generator import generar
+    codigo = generar()
+    return codigo
