@@ -5,9 +5,13 @@ libro3 = {'cod': 'adOd09UE', 'cant_ej_ad': 1, 'cant_ej_pr': 0, "titulo": "El có
 
 def nuevo_libro():
     CodGenerado = generar_codigo()
-    titulo = input("Ingrese el título: ") 
-    autor = input("Ingrese el autor: ")
-    ej_adquiridos = input("Ingrese los ejemplares adquiridos: ")
+    titulo = str(input("Ingrese el título: ")) 
+    autor = str(input("Ingrese el autor: "))
+    ej_adquiridos = int(input("Ingrese los ejemplares adquiridos: "))
+    while ej_adquiridos < 0:
+        print("Error. La cantidad de ejemplares adquiridos no puede ser negativa.")
+        ej_adquiridos = int(input("Ingrese los ejemplares adquiridos: "))
+        break
 
     libro_reg = {
         'cod': CodGenerado,

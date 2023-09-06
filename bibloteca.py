@@ -23,8 +23,11 @@ def registrar_nuevo_libro():
     libros.append(nuevo_libro)
     print("Libro registrado con éxito.")
     print()
-    for clave, valor in nuevo_libro.items():
-        print(f"{clave}: {valor}")
+    print(f"Código: {nuevo_libro['cod']}")
+    print(f"Título: {nuevo_libro['titulo']}")
+    print(f"Autor: {nuevo_libro['autor']}")
+    print(f"Cantidad de ejemplares disponibles: {nuevo_libro['cant_ej_ad']}")
+    print(f"Cantidad de ejemplares prestados: {nuevo_libro['cant_ej_pr']}")
     return nuevo_libro
 
 def eliminar_ejemplar_libro():
@@ -63,7 +66,9 @@ def prestar_ejemplar_libro():
         else:
             print(f"Cantidad de ejemplares disponibles: {libro['cant_ej_ad']}")
             libro['cant_ej_ad'] = libro['cant_ej_ad'] - 1
+            libro['cant_ej_pr'] = libro['cant_ej_pr'] + 1
             print(f"Cantidad actual de ejemplares disponibles: {libro['cant_ej_ad']}")
+            print(f"Cantidad actual de ejemplares prestados: {libro['cant_ej_pr']}")
             print()
             print("Operación exitosa.")
     else:
@@ -91,7 +96,3 @@ def devolver_ejemplar_libro():
     else:
         print("Error: El libro no existe en la biblioteca.")
     return libro_encontrado
-
-def nuevo_libro():
-    #completar
-    return None
