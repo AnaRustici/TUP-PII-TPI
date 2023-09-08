@@ -96,3 +96,8 @@ def devolver_ejemplar_libro():
     else:
         print("Error: El libro no existe en la biblioteca.")
     return libro_encontrado
+
+
+"""def nuevo_libro():
+    #COMPLETAR
+    return None"""
